@@ -1,0 +1,1 @@
+-- TODO Challenge 4 add a couple of dummy users to test against. Make one of them bhayden@helio.com and password set to: Development
