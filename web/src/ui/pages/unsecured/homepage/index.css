@@ -1,42 +1,80 @@
+body{
+  display: flex;
+  margin: 0;
+  padding: 0;
+  background-color: #262626
+}
 .main-container {
-  /* display: flex;
+  display: flex;
   flex-direction: column;
-  justify-content: center; */
-  background-color: white;
-  background: url("./homepage1.jpg") no-repeat center center fixed; 
-  background-size: contain;
+  justify-content: center ;
+  margin-top: 20%;
 } 
-
-.welcome {
-  /* display: block; */
-  font-family: Times;
-  font-size: 100px;
-  color: white;
-  text-shadow: 2px 2px 4px #000000;
-  margin-top: 1.5em;
-}
-
-.one { 
-  justify-content: center;
-  font-style: normal;
-  align-self: flex-end;
-}
-
 
 .main-pics-cont{
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.Welcome {
+  display: flex;
+  flex-flow: row nowrap;
   justify-content: center;
+  align-items: center;
+  > a{
+    transform: translate(-100%, -100%);
+    margin-left: 32em;
+    text-transform: uppercase;
+    color: white;
+    line-height: 50px;
+    text-decoration: none;
+    font-size: 50px;
+    font-family: verdana;
+    letter-spacing: 4px;
+    mix-blend-mode: hue;
+  }
+
+    > a:before, a:after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: red;
+      transition: 1s;
+      mix-blend-mode: hue;
+    }
+    > a:before {
+      bottom: -2px;
+      left: -2px;
+    }
+    > a:after{
+      bottom: -2px;
+      right: -2px;
+    }
+
+    > a:hover:before, a:hover:after,{
+      width: calc(512px / 2);
+      height: calc(50px / 0);
+    }
 }
 
 .car-pix{
-  width: 300px;
-  height: 200px;
-  /* margin-bottom: 10.5%; */
-  border: 5px solid white;
-  box-shadow: 10px 10px 10px #888888;
-  margin-right: 7px;
+ margin: 5px 5px 5px 5px;
+ width: 400px;
+ height: 300px;
+ box-shadow: 4px 4px 4px 4px #647476;
+ border-radius: 10px 10px 10px 10px;
 }
 
-.buttons-cont{
-  margin-bottom: 200px;
+
+.buttonL {
+
+}
+.buttonR {
+ 
+}
+
+.modal{
+
 }

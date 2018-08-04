@@ -10,14 +10,15 @@
 }
 
 .content-container {
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: center;
-  background-color: white;
+
 }
 
 .footer-container {
   flex: 0 1 40px;
 }
+/* flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  background-color: #262626; */

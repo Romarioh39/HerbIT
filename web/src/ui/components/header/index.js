@@ -17,9 +17,8 @@ class Header extends Component {
 
     return (
       <div styleName="container">
-        <h1>Team three</h1>
         <Link to="/login">
-          <img styleName="Stuff1" src={require('./stuff.png')} />
+          {/* <img styleName="#" src={require('')} /> */}
         </Link>
         <div styleName="active-links">
           {rightSide}
