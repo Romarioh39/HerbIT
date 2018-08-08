@@ -1,26 +1,20 @@
-// TODO Challenge 4 Add a route for the string manipulation challenge
-// Place it behind the secured route
+// import omit from 'lodash/omit'
 import React, { Component } from 'react'
-import { Redirect, Route, Switch, withRouter } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import CSSModules from 'react-css-modules'
 
+// autoLoginProcess
+import { protectedRoute } from '../../process/users/auth'
+
 import css from './index.css'
-// import { protectedRoute } from 'Process/users/auth'
-import Footer from 'UI/components/footer'
-import Header from 'UI/components/header'
-import connected from 'State/connect'
+import Header from '../components/header'
+import Footer from '../components/footer'
 
-// 404 Page
-import BadRequest from './bad-request/'
-
-// Secure Pages
-import landing from './secured/landing'
-import pyramid from './secured/challenges/pyramid'
-
-// Unsecured Pages
-import login from './unsecured/login/'
-import home from './unsecured/homepage'
-
+import Landing from './landing'
+import Home from './homepage/'
+import Login from './login/'
+import Slider from './homepage/slider'
+import SignUp from './sign-up'
 class App extends Component {
   render() {
     return (
@@ -30,14 +24,11 @@ class App extends Component {
         </div>
         <div styleName="content-container">
           <Switch>
-            <Route exact path="/" component={home} />,
-            <Route exact path="/login" component={login} />,
-            <Route exact path="/landing" component={(landing)} />
-            <Route exact path="/challenges" component={(() => {
-              <Redirect to={{ pathname: '/landing', state: { from: this.props.location } }} />
-            })} />
-            <Route exact path="/challenges/pyramid" component={(pyramid)} />
-            <Route component={BadRequest} />
+            <Route exact path="/" component={Home} />,
+            <Route exact path="/signUp" component={SignUp} />,
+            <Route exact path="/login" component={Login} />,
+            <Route exact path="/slider" component={Slider} />,
+            <Route exact path="/landing" component={protectedRoute(Landing)} />
           </Switch>
         </div>
         <div styleName="footer-container">
@@ -48,4 +39,4 @@ class App extends Component {
   }
 }
 
-export default withRouter(connected([], [])(CSSModules(App, css)))
+export default CSSModules(App, css)

@@ -3,7 +3,7 @@ import path from 'path'
 import express from 'express'
 import expressJwt from 'express-jwt'
 
-const API_PATH = './routes'
+const API_PATH = './routes/endpoints'
 
 const jwtConfig = {
   secret: process.env.JWT_SECRET,

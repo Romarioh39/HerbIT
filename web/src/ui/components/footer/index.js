@@ -5,6 +5,7 @@ import { Button, Icon, Input } from 'semantic-ui-react'
 import CSSModules from 'react-css-modules'
 
 import css from './index.css'
+
 class Footer extends Component {
   handleFacebook = () => {
     console.log('The user has interest in FB')

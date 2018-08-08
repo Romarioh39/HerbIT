@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Dropdown, Icon, Image } from 'semantic-ui-react'
 
-import connected from 'State/connect'
-import { selector as UsersState } from 'Process/users/reducer'
+import connected from '../../../../state/connect'
+import { selector as users } from '../../../../process/users/reducer'
 
 const options = [
   { key: 'profile', as: Link, to: '/profile', text: 'Account', icon: 'user' },
@@ -13,7 +13,7 @@ const options = [
 
 class HeaderNavLinks extends Component {
   render() {
-    const { active, entities } = this.props.UserState
+    const { active, entities } = this.props.users
     const user = entities[active]
     const trigger = (
       <span>
@@ -34,4 +34,4 @@ class HeaderNavLinks extends Component {
   }
 }
 
-export default connected([UsersState], [])(HeaderNavLinks)
+export default connected([users], [])(HeaderNavLinks)

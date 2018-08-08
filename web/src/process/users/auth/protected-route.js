@@ -1,13 +1,14 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
 
-import connected from 'State/connect'
-import { selector as UsersState } from 'Process/users/reducer'
+import connected from '../../../state/connect'
+import { selector as users } from '../reducer'
+import JWTVerify from './verify-jwt-token'
 
 const protectedRoute = WrappedComponent => {
   class PrivateRoute extends React.Component {
     render() {
-      const { active } = this.props.UserState
+      const { active } = this.props.users
       if (!active)
         return <Redirect to={{ pathname: '/', state: { from: this.props.location } }} />
 
@@ -15,7 +16,7 @@ const protectedRoute = WrappedComponent => {
     }
   }
 
-  return connected([UsersState], [])(PrivateRoute)
+  return connected([users], [])(JWTVerify(PrivateRoute))
 }
 
 export default protectedRoute

@@ -8,7 +8,7 @@ class HeaderDefaultLinks extends Component {
       <Link key="login" to="/login">
         <Button basic>Login</Button>
       </Link>,
-      <Link key="create-account" to="/create-account">
+      <Link key="create-account" to="/signUp">
         <Button basic>Sign Up</Button>
       </Link>
     ]
