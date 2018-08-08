@@ -2,6 +2,11 @@ import CSSModules from 'react-css-modules'
 import React, { Component } from 'react'
 import css from './index.css'
 
+import { Button } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
+
+const ButtonExampleButton = () => <Button>Click Here</Button>
+
 class SignUp extends React.Component {
   constructor(props){
     super(props)
@@ -18,19 +23,21 @@ class SignUp extends React.Component {
 
   render() {
     return (
-      <div styleName="signUp-container">
-        <head styleName="head-text">
+      <body styleName="signUp-container">
+        <header styleName="head-text">
           <p>Create an account here</p>
-        </head>
-        <body styleName="body-input">
+        </header>
+        <section styleName="body-input">
           <input type="text" placeholder="Full Name" value={this.state.fullName} onChange={(event) => { this.setState({ fullName: event.target.value }) }}/>
-          <input type="email" placeholder="E-mail"/>
-          <input type="password" placeholder="Password"/>
-        </body>
-        <footer styleName="footer-button">
-          <button onClick={this.summitInfo}>Create</button>
+          <input type="email" placeholder="E-mail" value={this.state.email} onChange={(event) => { this.setState({ email: event.target.value }) }}/>
+          <input type="password" placeholder="Password" value={this.state.password} onChange={(event) => { this.setState({ password: event.target.value }) }}/>
+        </section>
+        <footer>
+        <Link key="signUp" to="/login">
+          <Button className='button' onClick={this.summitInfo} basic>Create</Button>
+        </Link>
         </footer>
-      </div>
+      </body>
     )
   }
 }
