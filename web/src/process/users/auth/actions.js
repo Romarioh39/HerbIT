@@ -17,6 +17,7 @@ export function fetch(email, password) {
   }
 }
 
+
 export function* executeFetchToken({ email, password }) {
   const url = api.fetch.formatUrl()
   const body = api.fetch.serialize(email, password)

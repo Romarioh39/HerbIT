@@ -28,7 +28,7 @@
   }
 }
 
-  .button {
+/* .ui.basic.button, .ui.basic.buttons .button{
     position: relative;
     background-color: steelblue;
     border: none;
@@ -62,4 +62,4 @@
     margin: 0;
     opacity: 1;
     transition: 0s
-}
+} */

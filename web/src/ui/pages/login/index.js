@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom'
 import CSSModules from 'react-css-modules'
 import { Button, Icon, Input } from 'semantic-ui-react'
 
+import { protectedRoute } from '../index'
+
 import css from './index.css'
 import { loginProcess } from '../../../process/users/auth'
 
@@ -52,12 +54,12 @@ class Login extends Component {
             value={this.state.email} onChange={this.handleInputEmail} />
           <Input icon="user circle" iconPosition="left" size="big" placeholder="Enter Password" type="password"
             value={this.state.password} onChange={this.handleInputPassword} />
-          <Button type="button" animated color="green" onClick={this.handleClick}>
-            <Button.Content visible>Login</Button.Content>
-            <Button.Content hidden>
-              <Icon name="right arrow" />
-            </Button.Content>
-          </Button>
+            <Button type="button" animated color="green" onClick={this.handleClick}>
+              <Button.Content visible>Login</Button.Content>
+              <Button.Content hidden>
+                <Icon name="right arrow" />
+              </Button.Content>
+            </Button>
         </form>
         <Link to="/forgotten-password">Forgot Password?</Link>
       </div>

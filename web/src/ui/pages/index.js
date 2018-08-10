@@ -15,6 +15,7 @@ import Home from './homepage/'
 import Login from './login/'
 import Slider from './homepage/slider'
 import SignUp from './sign-up'
+
 class App extends Component {
   render() {
     return (
