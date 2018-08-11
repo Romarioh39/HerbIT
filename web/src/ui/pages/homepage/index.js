@@ -4,14 +4,18 @@ import Slider from './slider'
 import connected from '../../../state/connect'
 import { selector as animals } from './dummy_reducer'
 import * as homepageActions from './dummy_actions'
+import { selector as createaccounts } from '../../../process/users/create_reducer'
+import * as createaccountActions from '../../../process/users/auth/create_actions'
 
 class Homepage extends Component {
   componentDidMount() {
     this.props.homepageActions.fetchAnimals(2)
+    this.props.createaccountActions.fetchCreateAccount()
   }
 
   render() {
     console.log('Animals', this.props.animals)
+    console.log('Create Account', this.props.createaccounts.addingEmail)
     return (
       <div>
         {/* <Link to="/login">Login Page</Link> */}
@@ -26,4 +30,4 @@ class Homepage extends Component {
   }
 }
 
-export default connected([animals], [homepageActions])(Homepage)
+export default connected([animals, createaccounts], [homepageActions, createaccountActions])(Homepage)

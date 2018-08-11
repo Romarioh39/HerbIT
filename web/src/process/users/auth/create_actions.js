@@ -5,27 +5,21 @@ import api from './create_api'
 import TYPES from '../create_types'
 import LocalStorage from '../../../utilities/local-storage/token'
 
-export const name = 'userAuthActions'
+export const name = 'createaccountActions'
 
-export function post(full_name, email, password, phone_number) {
+export function post(email) {
   console.log("HERE I AM")
   return {
-    type: TYPES.CREATE_USER__REQUEST,
-    full_name,
-    email,
-    password,
-    phone_number
-  }
+    type: TYPES.CREATE_USER_ACCOUNT
+    }
 }
 
-export function* executeCreate({ full_name, email, password, phone_number }) {
-  const url = api.post.formatUrl()
-  const body = api.post.serialize(full_name, email, password, phone_number)
+
+export function* executeFetchCreateAccount() {
+  const url = api.fetch.formatUrl()
   try {
-    const res = yield post(api.fetch.request, url, body)
-    const normalizedData = normalize(res.data.user, userSchema)
-    LocalStorage.set(res.data)
-    yield put(fetchSuccess(normalizedData))
+    const res = yield call(api.fetch.request, url)
+    yield put(fetchSuccess(res.data.email))
   } catch (res) {
     // eslint-disable-next-line noconsole
     console.error('Request failed with', res.error)
@@ -34,13 +28,13 @@ export function* executeCreate({ full_name, email, password, phone_number }) {
 
 export function fetchSuccess() {
   return {
-    type: TYPES.CREATE_USER__REQUEST,
-    
+    type: TYPES.CREATE_USER_SUCCESS,
+    email
   }
 }
 
 const sagas = [
-  takeLatest(TYPES.CREATE_USER__REQUEST, executeCreate)
+  takeLatest(TYPES.CREATE_USER_ACCOUNT, executeCreateAccount)
 ]
 
 export default sagas
