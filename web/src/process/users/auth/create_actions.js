@@ -7,7 +7,7 @@ import LocalStorage from '../../../utilities/local-storage/token'
 
 export const name = 'createaccountActions'
 
-export function post(email) {
+export function fetchCreateAccount(email) {
   console.log("HERE I AM")
   return {
     type: TYPES.CREATE_USER_ACCOUNT
@@ -15,7 +15,7 @@ export function post(email) {
 }
 
 
-export function* executeFetchCreateAccount() {
+export function* executeCreateAccount() {
   const url = api.fetch.formatUrl()
   try {
     const res = yield call(api.fetch.request, url)

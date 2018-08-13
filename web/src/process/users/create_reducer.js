@@ -7,11 +7,11 @@ export const initialState = {
 
 const loadCreatAccount = (state, { email }) => ({
   ...state,
-  addingAccount: email
+  addingEmail: email
 })
 
 const handlers = {
-  [TYPES.CREATE_USER_ACCOUNT]: loadCreatAccount
+  [TYPES.CREATE_USER_SUCCESS]: loadCreatAccount
 }
 
 export default function(state = initialState, action = {}) {

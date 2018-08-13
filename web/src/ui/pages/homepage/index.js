@@ -15,7 +15,7 @@ class Homepage extends Component {
 
   render() {
     console.log('Animals', this.props.animals)
-    console.log('Create Account', this.props.createaccounts.addingEmail)
+    console.log('I AM THE EMAIL', this.props.createaccounts.addingEmail)
     return (
       <div>
         {/* <Link to="/login">Login Page</Link> */}
