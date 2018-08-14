@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgb(169, 169, 169, 1);
   height: 60px;
   padding: 20px;
   color: black;
@@ -21,16 +21,16 @@
   :global{
     :hover {
       .ui.basic.button{
-        box-shadow: 0 0 0 2px rgba(43, 196, 123, .6) inset;
+        box-shadow: 0 0 0 2px rgba(70, 130, 180, .6) inset;
         color: #2bdf7a !important;
         background-color: #f9f9f9 !important;
       }
     }
 
     .ui.basic.button{
-      border-radius: 16px;
-      color: #2BC47B !important;
-      box-shadow: 0 0 0 2px rgba(43, 196, 123, .6) inset;
+      border-radius: 6px;
+      color: steelblue !important;
+      box-shadow: 0 0 0 2px rgba(70, 130, 180, 0.6) inset;
     }
   }
 }

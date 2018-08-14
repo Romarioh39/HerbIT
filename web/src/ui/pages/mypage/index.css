@@ -30,18 +30,17 @@ header, footer, aside, nav, article {
 }
 
 header {
-  background-color: steelblue;
   flex: 0 0 10vh;
 }
 
 .footer {
-  background-color: steelblue;
   flex: 0 0 10vh;
 }
 
 aside {
-  background-color: darkgray;
+  background-color: steelblue;
   flex: 0 0 10vw;
+  color: black;
 }
 
 article {
@@ -49,8 +48,7 @@ article {
 }
 
 nav {
-  background-color: white;
-  opacity: 0.7;
+  background-color: steelblue;
   flex: 0 0 10vw;
   color: black;
   order: 2;
