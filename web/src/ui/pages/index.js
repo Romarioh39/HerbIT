@@ -14,7 +14,7 @@ import Landing from './landing'
 import Home from './homepage/'
 import Login from './login/'
 import Slider from './homepage/slider'
-import SignUp from './sign-up'
+import MyPage from './mypage'
 
 class App extends Component {
   render() {
@@ -26,7 +26,7 @@ class App extends Component {
         <div styleName="content-container">
           <Switch>
             <Route exact path="/" component={Home} />,
-            <Route exact path="/signUp" component={SignUp} />,
+            <Route exact path="/mypage" component={MyPage} />,
             <Route exact path="/login" component={Login} />,
             <Route exact path="/slider" component={Slider} />,
             <Route exact path="/landing" component={protectedRoute(Landing)} />
