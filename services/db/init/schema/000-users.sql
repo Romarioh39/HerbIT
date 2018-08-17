@@ -12,5 +12,5 @@ create table if not exists users
     email text,
     joined_date timestamp
 );
-grant select, insert, update, delete on table users to helio_app;
-grant select on table users to helio_read;
+grant select, insert, update, delete on table users to project_app;
+grant select on table users to project_read;

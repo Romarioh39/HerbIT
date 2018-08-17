@@ -45,7 +45,7 @@ class Login extends Component {
   render() {
     return (
       <div>
-        <div styleName="title">Welcome to Helio Challenges</div>
+        <div styleName="title">Welcome to project Challenges</div>
         <div styleName="description"> Sign in with your information below</div>
         {this.state.loading ? <div styleName="loading" /> : null}
         {this.state.error ? <div>Please provide a correct email</div> : null}

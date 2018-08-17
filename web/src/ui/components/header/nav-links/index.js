@@ -6,12 +6,12 @@ import { Button } from 'semantic-ui-react'
 class HeaderDefaultLinks extends Component {
   render() {
     return [
-      <Link key="login" to="/mypage">
+      <Link key="login" to="/login">
         <Button basic>Login</Button>
       </Link>,
-      <Link key="create-account" to="/login">
+      <Link key="create-account" to="/mypage">
         <Button basic>Sign Up</Button>
-      </Link>
+      </Link>,
       // <Herb key="Herb" to="/login">
       //   <Button basic> Sign it</Button>
       // </Herb>

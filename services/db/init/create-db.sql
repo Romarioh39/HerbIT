@@ -2,12 +2,12 @@ drop table if exists plans;
 drop table if exists passhash;
 drop table if exists users;
 
-drop database if exists helio;
-drop database if exists helio_integration;
-drop role if exists helio_app;
-drop role if exists helio_read;
+drop database if exists project;
+drop database if exists project_integration;
+drop role if exists project_app;
+drop role if exists project_read;
 
-create role helio_app login password 'heliodev' valid until 'infinity';
-create role helio_read login password 'heliodev' valid until 'infinity';
-create database helio;
-create database helio_integration;
+create role project_app login password 'projectdev' valid until 'infinity';
+create role project_read login password 'projectdev' valid until 'infinity';
+create database project;
+create database project_integration;

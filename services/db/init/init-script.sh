@@ -1,6 +1,6 @@
 #!/bin/bash
 
-host="helio-db"
+host="project-db"
 adminUser="admin"
 
 psql -U $adminUser --echo-errors -q -f ~/create-db.sql

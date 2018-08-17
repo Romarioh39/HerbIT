@@ -1,8 +1,8 @@
 version: '3.3'
 
 services:
-  helio-challenge-db:
-    container_name: helio-challenge-db
+  project-challenge-db:
+    container_name: project-challenge-db
     restart: always
     environment:
       POSTGRES_USER: admin
@@ -16,8 +16,8 @@ services:
       - 'backend-net'
 
 
-  helio-challenge-api:
-    container_name: helio-challenge-api
+  project-challenge-api:
+    container_name: project-challenge-api
     build:
       context: ./services/api
     ports:
@@ -30,15 +30,15 @@ services:
       port: '9001'
       BABEL_DISABLE_CACHE: 1
       JWT_SECRET: 'H34e626&D7'
-      JWT_COOKIE_NAME: 'helio-challenge-token'
-      DATABASE_URL: 'postgres://admin:admin@helio-challenge-db:5432/helio-challenge'
-      DATABASE_TEST_URL: 'postgres://admin:admin@helio-challenge-db:5432/helio-challenge-integration'
+      JWT_COOKIE_NAME: 'project-challenge-token'
+      DATABASE_URL: 'postgres://admin:admin@project-challenge-db:5432/project-challenge'
+      DATABASE_TEST_URL: 'postgres://admin:admin@project-challenge-db:5432/project-challenge-integration'
     networks:
       - 'backend-net'
       - 'frontend-net'
 
-  helio-challenge-web:
-    container_name: helio-challenge-web
+  project-challenge-web:
+    container_name: project-challenge-web
     build:
       context: ./web
     ports:
@@ -48,13 +48,13 @@ services:
       NODE_ENV: 'development'
       CHOKIDAR_USEPOLLING: 1
       JWT_SECRET: 'H34e626&D7'
-      JWT_COOKIE_NAME: 'helio-challenge-token'
+      JWT_COOKIE_NAME: 'project-challenge-token'
     volumes:
       - './web:/src/app'
       - '/src/app/node_modules'
     depends_on:
-      - 'helio-challenge-db'
-      - 'helio-challenge-api'
+      - 'project-challenge-db'
+      - 'project-challenge-api'
     networks:
       - 'frontend-net'
 
