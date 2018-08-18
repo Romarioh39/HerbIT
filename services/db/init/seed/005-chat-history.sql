@@ -1,5 +1,3 @@
-insert into chat_history (id, history_name, order_id) values
-    ('$2y$12$yppbJgTWqZ6gKX5OtcCuA.tqujXkKBr0yeZBYZXF5dILWIp139Oy.', 'chatroom',(1)),
-    ('$2y$12$RkaWnIZ28tUc4J/QHJymHuthP/Qxkf66dMXrJBOsg8Qcnz.jO//Ga', 'chathistory', (2)),
-    ('$2y$12$57ktNabV9YmCanyKIVDtHe3tAuxy8TLPWRLns4/XNnnSOGi/dXgZW', 'id',(3))
+insert into chat_history (room_id, user_handle, order_num) values
+    ('4fe7484d-7fe7-4213-be2e-c2d02947fc39', 'b9cdffec-ad82-4855-8cad-5315c3a06610', (1)),
 on conflict do nothing;
