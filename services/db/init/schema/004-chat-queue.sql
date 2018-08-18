@@ -1,4 +1,4 @@
-create table if not exists chat_group
+create table if not exists chat_queue
 (
     user_handle uuid references users(user_handle),
     chat_id uuid references chat_group(id),
