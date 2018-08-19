@@ -2,15 +2,15 @@ import CSSModules from 'react-css-modules'
 import React, { Component } from 'react'
 import css from './index.css'
 import connected from '../../../state/connect'
-import { selector as mypage} from './reducer'
-import * as myPageActions from './actions'
+import { selector as chatroom} from './reducer'
+import * as myChatActions from './action'
 
 // import { Button } from 'semantic-ui-react'
 // import { Link } from 'react-router-dom'
 
-class MyPage extends React.Component {
+class Chatroom extends React.Component {
   componentDidMount() {
-    this.props.myPageActions.getAllUsersForChat()
+    this.props.myChatActions.getInfoForChats()
   }
   render() {
     return (
@@ -19,12 +19,6 @@ class MyPage extends React.Component {
             header
           </header>
         <div styleName="main">
-          <aside>
-            aside
-          </aside>
-          <nav>
-            nav
-          </nav>
           <article>
             <p>section</p>
           </article>
@@ -37,4 +31,4 @@ class MyPage extends React.Component {
   }
 }
 
-export default connected([mypage], [myPageActions])(CSSModules(MyPage, css))
+export default connected([chatroom], [myChatActions])(CSSModules(Chatroom, css))

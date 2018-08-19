@@ -15,6 +15,7 @@ import Home from './homepage/'
 import Login from './login/'
 import Slider from './homepage/slider'
 import MyPage from './mypage'
+import Chatroom from './chatroom'
 
 class App extends Component {
   render() {
@@ -29,6 +30,7 @@ class App extends Component {
             <Route exact path="/mypage" component={MyPage} />,
             <Route exact path="/login" component={Login} />,
             <Route exact path="/slider" component={Slider} />,
+            <Route exact path="/chatroom" component={Chatroom} />
             <Route exact path="/landing" component={protectedRoute(Landing)} />
           </Switch>
         </div>

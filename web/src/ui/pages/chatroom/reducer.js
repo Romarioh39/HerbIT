@@ -1,17 +1,17 @@
-import TYPES from '../users/create_types'
+import TYPES from './types'
 
 // dummy_reducer
 export const initialState = {
-  addingEmail: ''
+  InfoForChats: []
 }
 
-const loadCreateAccount = (state, { email }) => ({
+const loadInfoForChats = (state, { InfoForChats }) => ({
   ...state,
-  addingEmail: email
+  InfoForChats: [{ name: 'Romario'}, { name: 'Tippets'}]
 })
 
 const handlers = {
-  [TYPES.CREATE_USER_SUCCESS]: loadCreateAccount
+  [TYPES.FETCH_INFO_FOR_CHAT_SUCCESS]: loadInfoForChats
 }
 
 export default function(state = initialState, action = {}) {
@@ -21,8 +21,8 @@ export default function(state = initialState, action = {}) {
 }
 
 export const selector = {
-  name: 'createaccounts',
+  name: 'chatroom',
   select(state) {
-    return state.createaccounts
+    return state.chatroom
   }
 }

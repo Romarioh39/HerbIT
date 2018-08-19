@@ -8,7 +8,7 @@ export const name = 'homepageActions'
 export function fetchAnimals(amount) {
   return {
     type: TYPES.FETCH_ANIMALS_REQUEST,
-    amount,
+    amount
   }
 }
 

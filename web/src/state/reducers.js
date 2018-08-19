@@ -4,11 +4,15 @@ import users from '../process/users/reducer'
 import animals from '../ui/pages/homepage/dummy_reducer'
 import TYPES from './types'
 import createaccounts from '../process/users/create_reducer'
+import chatroom from '../ui/pages/chatroom/reducer'
+import mypage from '../ui/pages/mypage/reducer'
 
 const appReducer = combineReducers({
   users,
   animals,
-  createaccounts
+  createaccounts,
+  chatroom,
+  mypage
 })
 
 export default (state, action) => {

@@ -10,13 +10,14 @@ export const name = 'createaccountActions'
 export function fetchCreateAccount(email) {
   console.log("HERE I AM")
   return {
-    type: TYPES.CREATE_USER_ACCOUNT
+    type: TYPES.CREATE_USER_ACCOUNT,
+    email
     }
 }
 
 
-export function* executeCreateAccount() {
-  const url = api.fetch.formatUrl()
+export function* executeCreateAccount(email) {
+  const url = api.fetch.formatUrl(email)
   try {
     const res = yield call(api.fetch.request, url)
     yield put(fetchSuccess(res.data.email))
