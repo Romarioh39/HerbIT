@@ -31,10 +31,12 @@ header, footer, aside, nav, article {
 
 header {
   flex: 0 0 10vh;
+  background: steelblue;
 }
 
 .footer {
   flex: 0 0 10vh;
+  background: steelblue;
 }
 
 aside {
@@ -45,6 +47,7 @@ aside {
 
 article {
   flex: 1 1 auto;
+  background: darkgray;
 }
 
 nav {

@@ -35,6 +35,7 @@ header {
 
 .footer {
   flex: 0 0 10vh;
+  background: steelblue;
 }
 
 article {

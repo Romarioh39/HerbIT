@@ -1,9 +1,12 @@
 import CSSModules from 'react-css-modules'
 import React, { Component } from 'react'
+
 import css from './index.css'
 import connected from '../../../state/connect'
 import { selector as mypage} from './reducer'
 import * as myPageActions from './actions'
+
+import { Button } from 'semantic-ui-react'
 
 // import { Button } from 'semantic-ui-react'
 // import { Link } from 'react-router-dom'
@@ -30,7 +33,8 @@ class MyPage extends React.Component {
           </article>
         </div>
         <footer styleName="footer">
-          Footer
+         <Button>+</Button>
+         <Button>x</Button>
         </footer>
       </div>
     )

@@ -5,7 +5,7 @@ import connected from '../../../state/connect'
 import { selector as chatroom} from './reducer'
 import * as myChatActions from './action'
 
-// import { Button } from 'semantic-ui-react'
+import { Button } from 'semantic-ui-react'
 // import { Link } from 'react-router-dom'
 
 class Chatroom extends React.Component {
@@ -24,7 +24,7 @@ class Chatroom extends React.Component {
           </article>
         </div>
         <footer styleName="footer">
-          Footer
+          <Button>+</Button>
         </footer>
       </div>
     )
