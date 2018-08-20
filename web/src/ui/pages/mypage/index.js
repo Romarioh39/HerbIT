@@ -13,9 +13,11 @@ import { Button } from 'semantic-ui-react'
 
 class MyPage extends React.Component {
   componentDidMount() {
-    this.props.myPageActions.getAllUsersForChat()
+    this.props.myPageActions.getInfoForChats()
   }
   render() {
+    console.log('InfoForChats', this.props.getInfoForChats)
+
     return (
       <div styleName="signUp-container">
           <header>
