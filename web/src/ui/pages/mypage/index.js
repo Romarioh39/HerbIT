@@ -13,11 +13,16 @@ import { Button } from 'semantic-ui-react'
 
 class MyPage extends React.Component {
   componentDidMount() {
-    this.props.myPageActions.getInfoForChats()
+    let data = this.props.myPageActions.getAllUsersForChat()
+    console.log("The Users: ", data)
+
+    fetch('http://localhost:3000/api/favorites/1')
+    .then((res) => { 
+      console.log("The Animals: ", res) 
+      console.log("Data: ", res)
+    })
   }
   render() {
-    console.log('InfoForChats', this.props.getInfoForChats)
-
     return (
       <div styleName="signUp-container">
           <header>
@@ -35,7 +40,7 @@ class MyPage extends React.Component {
           </article>
         </div>
         <footer styleName="footer">
-         <Button>+</Button>
+         <Button >+</Button>
          <Button>x</Button>
         </footer>
       </div>

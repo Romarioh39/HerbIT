@@ -7,6 +7,8 @@ export default class AuthController {
     const animals = ["dogs", "cats", "chickens", "snakes"]
     const amount = req.params.amount
     console.log("Animals", animals.slice(0, amount))
-    res.send({ animals: animals.slice(0, amount)})
+    // res.send({ animals: animals.slice(0, amount)})
+    res.send({ animals: "Elephant"})
   }
 }
+

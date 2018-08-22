@@ -5,18 +5,23 @@ import TYPES from './types'
 
 export const name = 'myPageActions'
 
-export function getAllUsersForChat(name) {
+
+export function getAllUsersForChat() {
+  console.log("Inside getAUFC 1")
   return {
-    type: TYPES.FETCH_ALL_USERS_REQUEST,
-    name
+    type: TYPES.FETCH_ALL_USERS_REQUEST
   }
 }
 
-export function* executeGetAllUsersForChat({name}) {
-  const url = api.getUsers.formatUrl(name)
+
+
+export function* executeGetAllUsersForChat({users}) {
+  const url = api.getUsers.formatUrl(users)
+  console.log("The URL: ", url)
   try {
     const res = yield call(api.getUsers.request, url)
-    console.log('Api', res)
+    console.log('Api Response: ', res)
+    console.log("THE DATA: ", res.data)
     yield put(getAllUsersForChatSuccess(res.data))
   } catch (res) {
     // eslint-disable-next-line noconsole
@@ -32,7 +37,7 @@ export function getAllUsersForChatSuccess({ users }) {
 }
 
 const sagas = [
-  takeLatest(TYPES.FETCH_ALL_USERS_REQUEST, executeGetAllUsersForChat),
+  takeLatest(TYPES.FETCH_ALL_USERS_REQUEST, executeGetAllUsersForChat)
 ]
 
 export default sagas

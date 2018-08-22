@@ -1,9 +1,9 @@
 export default class AuthController {
   constructor(router) {
-    router.get('/users', this.getAccount)
+    router.get('/users', this.getUsers)
   }
 
-  async getAccount(req, res) {
-    res.send({ account: 'hi whats up frontend'})
+  async getUsers(res) {
+    res.send({ users: 'hi whats up frontend'})
   }
 }

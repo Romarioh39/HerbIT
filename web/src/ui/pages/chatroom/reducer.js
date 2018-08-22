@@ -2,7 +2,7 @@ import TYPES from './types'
 
 // dummy_reducer
 export const initialState = {
-  InfoForChats: []
+  InfoForChats: ''
 }
 
 const loadInfoForChats = (state, { InfoForChats }) => ({

@@ -1,6 +1,6 @@
 import * as axiosWrapper from '../../../utilities/axios/wrapper'
 
-export const getUser = {
-  formatUrl: () => `/users`,
+export const getUsers = {
+  formatUrl: () => `/chatroom/users`,
   request: (url) => axiosWrapper.get(url),
 }

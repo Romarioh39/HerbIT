@@ -1,7 +1,5 @@
 FROM postgres:9-alpine
 
-MAINTAINER Bryce Hayden
-
 # If you alter this list then make sure to run the following commands:
 # docker-compose -f docker-compose.yml -f docker-development.yml down
 # docker-compose -f docker-compose.yml -f docker-development.yml stop users-db

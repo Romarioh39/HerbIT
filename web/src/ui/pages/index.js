@@ -30,7 +30,7 @@ class App extends Component {
             <Route exact path="/mypage" component={MyPage} />,
             <Route exact path="/login" component={Login} />,
             <Route exact path="/slider" component={Slider} />,
-            <Route exact path="/chatroom" component={Chatroom} />
+            <Route path="/chatroom/:roomId" component={Chatroom} />
             <Route exact path="/landing" component={protectedRoute(Landing)} />
           </Switch>
         </div>
