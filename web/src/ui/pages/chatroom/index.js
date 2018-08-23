@@ -7,6 +7,7 @@ import { selector as chatroom} from './reducer'
 import * as myChatActions from './action'
 
 import { Button } from 'semantic-ui-react'
+import { get } from 'http';
 // import { Link } from 'react-router-dom'
 
 class Chatroom extends Component {
@@ -23,7 +24,7 @@ class Chatroom extends Component {
     return (
       <div styleName="signUp-container">
           <header>
-            header
+            <button onclick={get.uuidFromApi}>Chat</button>
           </header>
         <div styleName="main">
           <article>

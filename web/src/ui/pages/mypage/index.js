@@ -1,5 +1,6 @@
 import CSSModules from 'react-css-modules'
 import React, { Component } from 'react'
+import { withRouter } from 'react-router'
 
 import css from './index.css'
 import connected from '../../../state/connect'
@@ -11,18 +12,16 @@ import { Button } from 'semantic-ui-react'
 // import { Button } from 'semantic-ui-react'
 // import { Link } from 'react-router-dom'
 
-class MyPage extends React.Component {
+class MyPage extends Component {
   componentDidMount() {
-    let data = this.props.myPageActions.getAllUsersForChat()
-    console.log("The Users: ", data)
-
-    fetch('http://localhost:3000/api/favorites/1')
-    .then((res) => { 
-      console.log("The Animals: ", res) 
-      console.log("Data: ", res)
-    })
+    const { match: { params: { roomId }}} = this.props
+    console.log('Room Id', roomId)
+    const uuidFromApi = '4fe7484d-7fe7-4213-be2e-c2d02947fc39'
+    this.props.history.push(`/chatroom/${uuidFromApi}`)
   }
   render() {
+    const { match: { params: { roomId }}} = this.props
+    console.log('Room Id', roomId)
     return (
       <div styleName="signUp-container">
           <header>
@@ -40,12 +39,13 @@ class MyPage extends React.Component {
           </article>
         </div>
         <footer styleName="footer">
-         <Button >+</Button>
+         <Button>+</Button>
          <Button>x</Button>
+         <Button onClick={get.uuidFromApi} >start</Button>
         </footer>
       </div>
     )
   }
 }
 
-export default connected([mypage], [myPageActions])(CSSModules(MyPage, css))
+export default withRouter(connected([mypage], [myPageActions])(CSSModules(MyPage, css)))
