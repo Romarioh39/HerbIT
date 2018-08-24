@@ -1,17 +1,20 @@
 import TYPES from './types'
 
-// dummy_reducer
 export const initialState = {
-  InfoForChats: ''
+  queue: [],
+  invites: [],
+  requests: []
 }
 
-const loadInfoForChats = (state, { InfoForChats }) => ({
+const loadQueue = (state, { queue, invites, requests }) => ({
   ...state,
-  InfoForChats: [{ name: 'Romario'}, { name: 'Tippets'}]
+  queue,
+  invites,
+  requests
 })
 
 const handlers = {
-  [TYPES.FETCH_INFO_FOR_CHAT_SUCCESS]: loadInfoForChats
+  [TYPES.FETCH_CHAT_QUEUE_SUCCESS]: loadQueue
 }
 
 export default function(state = initialState, action = {}) {
@@ -21,8 +24,8 @@ export default function(state = initialState, action = {}) {
 }
 
 export const selector = {
-  name: 'chatroom',
+  name: 'chatqueue',
   select(state) {
-    return state.chatroom
+    return state.chatqueue
   }
 }

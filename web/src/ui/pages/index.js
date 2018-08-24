@@ -14,7 +14,7 @@ import Landing from './landing'
 import Home from './homepage/'
 import Login from './login/'
 import Slider from './homepage/slider'
-import MyPage from './mypage'
+import MyPage from './myfriendspage'
 import Chatroom from './chatroom'
 
 class App extends Component {
@@ -27,7 +27,7 @@ class App extends Component {
         <div styleName="content-container">
           <Switch>
             <Route exact path="/" component={Home} />,
-            <Route exact path="/mypage" component={MyPage} />,
+            <Route exact path="/myfriendspage" component={MyPage} />,
             <Route exact path="/login" component={Login} />,
             <Route exact path="/slider" component={Slider} />,
             <Route path="/chatroom/:roomId" component={Chatroom} />

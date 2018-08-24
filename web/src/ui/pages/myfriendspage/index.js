@@ -12,7 +12,7 @@ import { Button } from 'semantic-ui-react'
 // import { Button } from 'semantic-ui-react'
 // import { Link } from 'react-router-dom'
 
-class MyPage extends Component {
+class MyFriendsPage extends Component {
   componentDidMount() {
     const { match: { params: { roomId }}} = this.props
     console.log('Room Id', roomId)
@@ -48,4 +48,4 @@ class MyPage extends Component {
   }
 }
 
-export default withRouter(connected([mypage], [myPageActions])(CSSModules(MyPage, css)))
+export default withRouter(connected([mypage], [myPageActions])(CSSModules(MyFriendsPage, css)))

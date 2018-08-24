@@ -5,26 +5,48 @@ import css from './index.css'
 import connected from '../../../state/connect'
 import { selector as chatroom} from './reducer'
 import * as myChatActions from './action'
-
+import PropTypes from 'prop-types'
 import { Button } from 'semantic-ui-react'
-import { get } from 'http';
+// import { get } from 'http';
 // import { Link } from 'react-router-dom'
 
-class Chatroom extends Component {
-  componentDidMount() {
-    const { match: { params: { roomId }}} = this.props
-    console.log('Room Id', roomId)
-    const uuidFromApi = '123'
-    this.props.history.push(`/chatroom/${uuidFromApi}`)
-    //this.props.myChatActions.getInfoForChats(roomId)
+class ChatNow extends Component {
+  static propTypes = {
+    match: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired
+  }
+  componentDidMount(){
+    const { match } = this.props
+    const { name: chatname } = match.params
+    this.props.myChatActions.fetchChatQueue(chatname)
+  }
+
+  // componentDidMount() {
+  //   const { match: { params: { roomId }}} = this.props
+  //   console.log('Room Id', roomId)
+  //   const uuidFromApi = '123'
+  //   this.props.history.push(`/chatroom/${uuidFromApi}`)
+  //   //this.props.myChatActions.ChatQueue(roomId)
+  // }
+  requestGame = (userHandle) => {
+    this.props.gameQueueActions.requestGame(userHandle)
   }
   render() {
-    const { match: { params: { roomId }}} = this.props
-    console.log('Room Id', roomId)
+    const { match, chatqueue } = this.props
+    const { name: chatname } = match.params
+    // const { match: { params: { roomId }}} = this.props
+    // console.log('Room Id', roomId)
     return (
       <div styleName="signUp-container">
+        <div>
+          {chatqueue}
+        </div>
+        <div>
+          {chatname}
+        </div>
           <header>
-            <button onclick={get.uuidFromApi}>Chat</button>
+            {/* <button onclick={get.uuidFromApi}>Chat</button> */}
           </header>
         <div styleName="main">
           <article>
@@ -39,4 +61,4 @@ class Chatroom extends Component {
   }
 }
 
-export default withRouter(connected([chatroom], [myChatActions])(CSSModules(Chatroom, css)))
+export default withRouter(connected([chatroom], [myChatActions])(CSSModules(ChatNow, css)))
