@@ -14,22 +14,30 @@ import { Button } from 'semantic-ui-react'
 
 class MyFriendsPage extends Component {
   componentDidMount() {
-    const { match: { params: { roomId }}} = this.props
-    console.log('Room Id', roomId)
-    const uuidFromApi = '4fe7484d-7fe7-4213-be2e-c2d02947fc39'
-    this.props.history.push(`/chatroom/${uuidFromApi}`)
+    this.props.myPageActions.getAllUsersForChat()
+  //   const { match: { params: { roomId }}} = this.props
+  //   console.log('Room Id', roomId)
+  //   const uuidFromApi = '4fe7484d-7fe7-4213-be2e-c2d02947fc39'
+  //   this.props.history.push(`/chatroom/${uuidFromApi}`)
   }
+  
   render() {
-    const { match: { params: { roomId }}} = this.props
-    console.log('Room Id', roomId)
+    console.log('my friends', this.props.mypage)
+    // const { match: { params: { roomId }}} = this.props
+    // console.log('Room Id', roomId)
     return (
       <div styleName="signUp-container">
           <header>
-            header
+          <button placeholder="Start" type="text"
+            value={this.state} onClick={this.props.uuidFromApi} />
           </header>
         <div styleName="main">
           <aside>
-            aside
+          {/* {
+          this.props.mypage.mypage.map ((element, index) => {
+            return <div key={index}> My {index=1} friends list: {element}</div>
+          })
+        } */}
           </aside>
           <nav>
             nav
@@ -41,7 +49,7 @@ class MyFriendsPage extends Component {
         <footer styleName="footer">
          <Button>+</Button>
          <Button>x</Button>
-         <Button onClick={get.uuidFromApi} >start</Button>
+         {/* <Button onClick={get.uuidFromApi} >start</Button> */}
         </footer>
       </div>
     )

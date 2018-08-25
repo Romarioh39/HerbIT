@@ -3,7 +3,8 @@ export default class AuthController {
     router.get('/users', this.getUsers)
   }
 
-  async getUsers(res) {
+  async getUsers(req, res) {
+    console.log("Hi!!!!! ")
     res.send({ users: 'hi whats up frontend'})
   }
 }

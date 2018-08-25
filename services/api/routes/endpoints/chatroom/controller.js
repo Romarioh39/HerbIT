@@ -24,9 +24,13 @@ export default class AuthController {
   }
 
   async requestChat(req, res) {
-    const { userHandle } = req.body
-    const token = req.user
-    const results = await makeRequest(token.userHandle, userHandle)
-    res.send(results)
+    // const { userHandle } = req.body
+    // const token = req.user
+    // const results = await makeRequest(token.userHandle, userHandle)
+    // res.send(results)
+    res.send({ 
+      user: '',
+      id: 123
+    })
   }
 }

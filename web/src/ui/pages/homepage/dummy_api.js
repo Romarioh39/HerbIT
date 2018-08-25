@@ -4,3 +4,4 @@ export const fetch = {
   formatUrl: (amount) => `/animals/favorites/${amount}`,
   request: (url) => axiosWrapper.get(url),
 }
+

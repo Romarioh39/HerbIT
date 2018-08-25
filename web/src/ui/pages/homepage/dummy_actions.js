@@ -12,6 +12,7 @@ export function fetchAnimals(amount) {
   }
 }
 
+
 export function* executeFetchAnimals({ amount }) {
   const url = api.fetch.formatUrl(amount)
   try {

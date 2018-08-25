@@ -18,7 +18,7 @@ const jwtConfig = {
   }
 }
 
-const unsecuredRoutes = ['/api/auth/login']
+const unsecuredRoutes = ['/api/auth/login', '/api/chatroom/chatroom', '/api/myfriendspage/users' ]
 
 class Routes {
   load(folderName, app) {

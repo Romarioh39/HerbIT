@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import CSSModules from 'react-css-modules'
 import { Button, Icon, Input } from 'semantic-ui-react'
 
-import { protectedRoute } from '../index'
+// import { protectedRoute } from '../index'
 
 import css from './index.css'
 import { loginProcess } from '../../../process/users/auth'

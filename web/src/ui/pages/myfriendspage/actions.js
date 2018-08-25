@@ -15,11 +15,13 @@ export function getAllUsersForChat() {
 
 
 
-export function* executeGetAllUsersForChat({users}) {
-  const url = api.getUsers.formatUrl(users)
-  console.log("The URL: ", url)
+export function* executeGetAllUsersForChat({}) {
+  const url = api.getUsers.formatUrl()
+  console.log("The URL33: ", url)
   try {
+    console.log("Before 1st Y.")
     const res = yield call(api.getUsers.request, url)
+    console.log("After 1st Y.")
     console.log('Api Response: ', res)
     console.log("THE DATA: ", res.data)
     yield put(getAllUsersForChatSuccess(res.data))
