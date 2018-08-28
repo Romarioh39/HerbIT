@@ -16,6 +16,7 @@ import Login from './login/'
 import Slider from './homepage/slider'
 import MyFriendsPage from './myfriendspage'
 import Chatroom from './chatroom'
+import CreateAccount from './createaccount'
 
 class App extends Component {
   render() {
@@ -29,6 +30,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />,
             <Route exact path="/myfriendspage/:usersId" component={MyFriendsPage} />,
             <Route exact path="/login" component={Login} />,
+            <Route exact path="/createacount" component={CreateAccount} />,
             <Route exact path="/slider" component={Slider} />,
             <Route path="/chatroom/:roomId" component={Chatroom} />
             <Route exact path="/landing" component={protectedRoute(Landing)} />

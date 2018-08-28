@@ -1,4 +1,4 @@
-import typesCreator from '../../../src/state/types-creator'
+import typesCreator from '../../../../src/state/types-creator'
 
 export default typesCreator('createaccount',
   'CREATE_USER_ACCOUNT',

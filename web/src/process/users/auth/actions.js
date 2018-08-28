@@ -13,7 +13,7 @@ export function fetch(email, password) {
   return {
     type: TYPES.FETCH_USER_TOKEN_REQUEST,
     email,
-    password,
+    password
   }
 }
 

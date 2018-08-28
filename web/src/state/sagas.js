@@ -1,7 +1,7 @@
 import AuthSagas from '../process/users/auth/actions'
 import AnimalSagas from '../ui/pages/homepage/dummy_actions'
 import RootSagas from './actions'
-import CreateAccountSagas from '../process/users/auth/create_actions'
+import CreateAccountSagas from '../ui/pages/createaccount/actions'
 import InfoForChatsSagas from '../ui/pages/chatroom/action'
 import AllUsersForChatSagas from '../ui/pages/myfriendspage/actions'
 

@@ -1,13 +1,13 @@
-import TYPES from '../users/create_types'
+import TYPES from './types'
 
 // dummy_reducer
 export const initialState = {
-  addingEmail: ''
+  accounts: ''
 }
 
 const loadCreateAccount = (state, { email }) => ({
   ...state,
-  addingEmail: email
+  accounts:  [{ email: 'Bryce@gmail.com'}, { email: 'romario@gmail.com'}]
 })
 
 const handlers = {
@@ -21,8 +21,8 @@ export default function(state = initialState, action = {}) {
 }
 
 export const selector = {
-  name: 'createaccounts',
+  name: 'createaccount',
   select(state) {
-    return state.createaccounts
+    return state.createaccount
   }
 }

@@ -4,6 +4,7 @@ export default class AuthController {
   }
 
   async getAccount(req, res) {
-    res.send({ account: 'hi whats up frontend'})
+    console.log('Hello!!!')
+    res.send({ account: 'Lets create an account front-end'})
   }
 }
