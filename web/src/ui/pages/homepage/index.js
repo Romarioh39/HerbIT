@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 // import { Link } from 'react-router-dom'
-// import Slider from './slider'
+import Slider from './slider'
 import connected from '../../../state/connect'
 import { selector as animals } from './dummy_reducer'
 import * as homepageActions from './dummy_actions'
@@ -14,7 +14,6 @@ class Homepage extends Component {
     console.log('Animals', this.props.animals)
     return (
       <div>
-        {/* <Link to="/login">Login Page</Link> */}
         <Slider />
         {
           this.props.animals.animals.map ((element, index) => {

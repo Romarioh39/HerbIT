@@ -1,14 +1,12 @@
 body{
-  display: flex;
   margin: 0;
   padding: 0;
-  background-color: #262626
+  background-color: #262626;
 }
 .main-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 10%;
 } 
 
 .main-pics-cont{
@@ -16,6 +14,20 @@ body{
   justify-content: inherit;
   flex-direction: row;
   flex-wrap: nowrap;
+  margin-bottom: 10%;
+  font-size: -webkit-xxx-large;
+  color: white;
+  opacity: .7;
+  border: 2px solid red;
+}
+.fas {
+  display: flex;
+  justify-content: center;
+}
+
+
+.myarr1{
+  border: 2px solid pink;
 }
 
 .Welcome {
@@ -23,16 +35,17 @@ body{
   flex-flow: row nowrap;
   justify-content: inherit;
   align-items: center;
-  > a{
+  margin-top: 15%;
+  > a {
     transform: translate(-100%, -100%);
-    margin-left: 37em;
+    margin-left: 45em;
     text-transform: uppercase;
     color: white;
-    line-height: 50px;
+    line-height: 43px;
     text-decoration: none;
     font-size: 50px;
     font-family: verdana;
-    letter-spacing: 6px;
+    letter-spacing: 35px;
     mix-blend-mode: hue;
   }
 
@@ -41,22 +54,22 @@ body{
       position: absolute;
       width: 10px;
       height: 10px;
-      background: rgb(0, 132, 255);
+      background: rgb(125, 130, 134);
       transition: 1s;
       mix-blend-mode: hue;
     }
     > a:before {
-      bottom: -2px;
-      left: -2px;
+      bottom: -1px;
+      left: 2px;
     }
     > a:after{
-      bottom: -2px;
-      right: -2px;
+      bottom: -1px;
+      right: 49px;
     }
 
     > a:hover:before, a:hover:after,{
-      width: calc(512px / 2);
-      height: calc(50px / 0);
+      width: calc(612px / 2);
+      height: calc(60px / 0);
     }
 }
 
@@ -64,18 +77,12 @@ body{
  margin: 5px 5px 5px 5px;
  width: 400px;
  height: 300px;
- box-shadow: 4px 4px 4px 4px rgb(0, 132, 255);
- border-radius: 70px 70px 70px 70px;
+ border-radius: 20px 20px 20px 20px;
 }
 
-
-.buttonL {
-
+.far fa-angle-left {
+  display: flex;
 }
-.buttonR {
- 
-}
-
-.modal{
-
+.far fa-angle-right {
+  display: flex;
 }

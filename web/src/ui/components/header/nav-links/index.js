@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from 'semantic-ui-react'
-// import { Herb } from "herb-ui"
+import { Herb } from 'herb-ui'
 
 class HeaderDefaultLinks extends Component {
   render() {
@@ -11,10 +11,8 @@ class HeaderDefaultLinks extends Component {
       </Link>,
       <Link key="create-account" to="/mypage">
         <Button basic>Sign Up</Button>
-      </Link>,
-      // <Herb key="Herb" to="/login">
-      //   <Button basic> Sign it</Button>
-      // </Herb>
+      </Link>
+      // <Herb /> 
     ]
   }
 }
