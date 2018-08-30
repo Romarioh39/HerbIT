@@ -7,6 +7,7 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: 80vh;
 } 
 
 .main-pics-cont{
@@ -18,16 +19,15 @@ body{
   font-size: -webkit-xxx-large;
   color: white;
   opacity: .7;
-  border: 2px solid red;
+}
+@media screen and (min-width: 576px) {
+  .main-pics-cont {
+    flex-direction: row;
+  }
 }
 .fas {
   display: flex;
   justify-content: center;
-}
-
-
-.myarr1{
-  border: 2px solid pink;
 }
 
 .Welcome {
@@ -35,17 +35,17 @@ body{
   flex-flow: row nowrap;
   justify-content: inherit;
   align-items: center;
-  margin-top: 15%;
   > a {
     transform: translate(-100%, -100%);
+    margin-top: 100%;
     margin-left: 45em;
     text-transform: uppercase;
     color: white;
-    line-height: 43px;
+    line-height: 55px;
     text-decoration: none;
     font-size: 50px;
     font-family: verdana;
-    letter-spacing: 35px;
+    letter-spacing: 30px;
     mix-blend-mode: hue;
   }
 
@@ -64,7 +64,7 @@ body{
     }
     > a:after{
       bottom: -1px;
-      right: 49px;
+      right: 43px;
     }
 
     > a:hover:before, a:hover:after,{

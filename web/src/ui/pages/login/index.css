@@ -1,28 +1,51 @@
+
 .title {
-  font-size: 28px;
-  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 61px;
+  font-size: 3em;
+  color: white;
 }
 
 .description {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
   font-size: 12px;
-  margin-bottom: 40px;
+  color: white;
 }
 
 .form {
   display: flex;
   flex-direction: column;
   width: 100%;
-  .input {
-    margin-bottom: 20px;
-  }
-  :global {
-    .ui.big.input {
-      margin-bottom: 25px;
-    }
-    .ui.button {
-      margin: 0 0 20px 0;
-    }
-  }
+  height: 59vh;
 }
 
+input {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 20px;
+  text-align: center;
+  letter-spacing: 6px;
+  height: 3em;
+  border-radius: 6px;
+}
+.btn {
+  padding: 15px 25px 15px 25px;
+  background-color: darkgray;
+  border: hidden;
+  font-size: 20px;
+  color: white;
+  margin-top: 18px;
+  text-shadow: 1px 1px 2px #000000;
+  border-radius: 6px;
+}
+
+a {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
 .loading {}

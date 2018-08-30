@@ -1,13 +1,8 @@
-// TODO Challenge 4
-// Add a loading spinner for when waiting on the API to give the green light
-// Show an error message when the use enters bad data.
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import CSSModules from 'react-css-modules'
-import { Button, Icon, Input } from 'semantic-ui-react'
-
+// import { Button, Icon, Input } from 'semantic-ui-react'
 // import { protectedRoute } from '../index'
-
 import css from './index.css'
 import { loginProcess } from '../../../process/users/auth'
 
@@ -45,23 +40,19 @@ class Login extends Component {
   render() {
     return (
       <div>
-        <div styleName="title">Welcome to project Challenges</div>
+        <div styleName="title">Sign in to your account here</div>
         <div styleName="description"> Sign in with your information below</div>
         {this.state.loading ? <div styleName="loading" /> : null}
         {this.state.error ? <div>Please provide a correct email</div> : null}
         <form styleName="form">
-          <Input icon="user circle" iconPosition="left" size="big" placeholder="Your Email" type="text"
+          <input icon="user circle" placeholder="Your Email" type="text"
             value={this.state.email} onChange={this.handleInputEmail} />
-          <Input icon="user circle" iconPosition="left" size="big" placeholder="Enter Password" type="password"
+          <input icon="user circle" placeholder="Enter Password" type="password"
             value={this.state.password} onChange={this.handleInputPassword} />
-            <Button type="button" animated color="green" onClick={this.handleClick}>
-              <Button.Content visible>Login</Button.Content>
-              <Button.Content hidden>
-                <Icon name="right arrow" />
-              </Button.Content>
-            </Button>
+          <button type="button" animated color="blue" onClick={this.handleClick}></button>
+          <button styleName="btn">Login</button>
+          <Link to="/forgotten-password">Forgot Password?</Link>
         </form>
-        <Link to="/forgotten-password">Forgot Password?</Link>
       </div>
     )
   }

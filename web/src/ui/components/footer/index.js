@@ -38,17 +38,14 @@ class Footer extends Component {
               <Link to="/contact-us">Contact Us</Link>
             </div>
             <div styleName="sub-section-item-row">
-              <div><Button basic icon onClick={this.handleFacebook}><Icon name="facebook f" color="green" /></Button></div>
-              <div><Button basic icon onClick={this.handleTwitter}><Icon name="twitter" color="green" /></Button></div>
-              <div><Button basic icon onClick={this.handleLinkedIn}><Icon name="linkedin" color="green" /></Button></div>
+              <div><Button basic icon onClick={this.handleFacebook}><Icon name="facebook f" color="blue" /></Button></div>
+              <div><Button basic icon onClick={this.handleTwitter}><Icon name="twitter" color="blue" /></Button></div>
+              <div><Button basic icon onClick={this.handleLinkedIn}><Icon name="linkedin" color="blue" /></Button></div>
             </div>
             <div styleName="sub-section-item-email">
-              <Input action={{ color: 'green', content: 'Send' }} placeholder="Your Email" />
+              <Input action={{ color: 'blue', content: 'Send' }} placeholder="Your Email" />
             </div>
           </div>
-        </div>
-        <div styleName="section-copyright">
-          <div><Icon name="copyright" />Perceive 2017. All rights resevered</div>
         </div>
       </div>
     )

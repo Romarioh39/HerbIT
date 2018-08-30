@@ -1,6 +1,13 @@
 import CSSModules from 'react-css-modules'
 import React, { Component } from 'react'
 import css from './index.css'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+// export const Food = () => (
+//   <div>
+//     Favorite Food: <FontAwesomeIcon icon="stroopwafel" />
+//   </div>
+// )
 
 class Slider extends Component {
   constructor(props) {
