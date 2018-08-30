@@ -38,9 +38,10 @@ body{
   > a {
     transform: translate(-100%, -100%);
     margin-top: 100%;
-    margin-left: 45em;
+    margin-left: 43em;
     text-transform: uppercase;
     color: white;
+    text-shadow: 2px 2px 4px darkgray;
     line-height: 55px;
     text-decoration: none;
     font-size: 50px;
