@@ -28,13 +28,13 @@ class Login extends Component {
   handleClick = () => {
     const { email, password } = this.state
 
+    console.log('About to check')
     if (email.indexOf('@') === -1) {
       this.setState({ error: true })
       return
     }
-
-    this.setState({ loading: true })
-    setTimeout(() => this.props.loginProcess(email, password), 6000)
+    console.log('here')
+   this.props.loginProcess(email, password)
   }
 
   render() {
@@ -49,8 +49,9 @@ class Login extends Component {
             value={this.state.email} onChange={this.handleInputEmail} />
           <input icon="user circle" placeholder="Enter Password" type="password"
             value={this.state.password} onChange={this.handleInputPassword} />
-          <button type="button" animated color="blue" onClick={this.handleClick}></button>
-          <button styleName="btn">Login</button>
+          <button styleName="btn" type="button" onClick={this.handleClick}>
+            Login
+          </button>
           <Link to="/forgotten-password">Forgot Password?</Link>
         </form>
       </div>

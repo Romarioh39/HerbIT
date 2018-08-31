@@ -15,6 +15,7 @@ export default class AuthController {
 
   async login(req, res) {
     const { email, password } = req.body
+    console.log('here i error', email, password)
     const results = await authinticateLogin(email, password)
     res.send(results)
   }

@@ -1,4 +1,5 @@
 insert into users (user_handle, username, first_name, middle_name, last_name, suffix, email, tel, joined_date) values
+    ('123','bryce','bryce','d', 'hayden', '','bryce@helio.com', 9083616274, now()), 
     ('037b4897-8a2a-46b6-8ed7-47a555bb40f2', 'Russia', 'Ana', 'D', 'Held', '', 'romarioh39@gmail.com', 9083616274 ,now()),
     ('17832b68-e91e-45f4-9a92-042c69b1b9c5', 'Har', 'Ben', 'P', 'Henry', '', 'admin@gmail.com', 9083626275,  now()),
     ('06fad102-1a73-41ad-ba62-7bbd4be3278f', 'NPC 1', 'John', 'Z', 'Doe', '', 'npc1@gmail.com', 9083636276, now()),

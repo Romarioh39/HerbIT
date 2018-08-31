@@ -15,11 +15,11 @@ class Homepage extends Component {
     return (
       <div>
         <Slider />
-        {
+        {/* {
           this.props.animals.animals.map ((element, index) => {
             return <div key={index}>this is my {index=1} favorite animal: {element}</div>
           })
-        }
+        } */}
       </div>
     )
   }
