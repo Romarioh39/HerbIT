@@ -30,7 +30,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />,
             <Route exact path="/myfriendspage/:usersId" component={MyFriendsPage} />,
             <Route exact path="/login" component={Login} />,
-            <Route exact path="/createacount" component={CreateAccount} />,
+            <Route exact path="/createaccount" component={CreateAccount} />,
             <Route exact path="/slider" component={Slider} />,
             <Route path="/chatroom/:roomId" component={Chatroom} />
             <Route exact path="/landing" component={protectedRoute(Landing)} />

@@ -9,7 +9,7 @@ class HeaderDefaultLinks extends Component {
       <Link key="login" to="/login">
         <Button basic>Login</Button>
       </Link>,
-      <Link key="create-account" to="/mypage">
+      <Link key="/" to="/createaccount">
         <Button basic>Sign Up</Button>
       </Link>,
       // <Modal isOpen={true} /> 

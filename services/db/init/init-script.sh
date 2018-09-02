@@ -1,6 +1,6 @@
 #!/bin/bash
 
-host="project-db"
+host="project-challenge-db"
 adminUser="admin"
 
 psql -U $adminUser --echo-errors -q -f ~/create-db.sql

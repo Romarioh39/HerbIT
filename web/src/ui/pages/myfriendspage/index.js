@@ -1,7 +1,6 @@
 import CSSModules from 'react-css-modules'
 import React, { Component } from 'react'
 import { withRouter } from 'react-router'
-
 import css from './index.css'
 import connected from '../../../state/connect'
 import { selector as mypage} from './reducer'
