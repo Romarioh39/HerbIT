@@ -19,10 +19,9 @@ class SignUp extends Component{
 
   render(){
     return(
-      <div>
-        <h1>create account here</h1>
-        <p>information below</p>
-
+      <div styleName="signUp-container">
+        <div styleName="title">Create Account Here</div>
+        <div styleName="description">account information below</div>
         <input type="text" 
           value={ this.state.email } 
           onChange={this.handleInputChange}
@@ -32,42 +31,11 @@ class SignUp extends Component{
           onChange={this.handlePasswordChange}
           placeholder="Password" />
 
-        <button onClick={this.handleCreate} >Log In</button>
-
+        <button styleName="btn"
+         onClick={this.handleCreate} >Done</button>
       </div>
     )
   }
 }
 
 export default connected([], [createAccountActions])(CSSModules(SignUp, css))
-
-
-
-// class SignUp extends Component {
-//   componentDidMount() {
-//     console.log('i am the create account actions')
-//     this.props.createaccountActions.fetchCreateAccount()
-//   }
-
-//   render() {
-//     console.log('SignUp now', this.props.createaccount)
-//     return (
-//       <body styleName="signUp-container">
-//         <header styleName="head-text">
-//           My name is romario 
-//         </header>
-//         <section styleName="body-input">
-//           Whats up
-//         </section>
-//         <footer>
-//           Hi
-//         </footer>
-//         <aside>
-//           Hello
-//         </aside>
-//       </body>
-//     )
-//   }
-// }
-
-// export default withRouter(connected([createaccount], [createaccountActions])(CSSModules(SignUp, css)))

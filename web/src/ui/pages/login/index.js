@@ -45,10 +45,14 @@ class Login extends Component {
         {this.state.loading ? <div styleName="loading" /> : null}
         {this.state.error ? <div>Please provide a correct email</div> : null}
         <form styleName="form">
-          <input icon="user circle" placeholder="Your Email" type="text"
-            value={this.state.email} onChange={this.handleInputEmail} />
-          <input icon="user circle" placeholder="Enter Password" type="password"
-            value={this.state.password} onChange={this.handleInputPassword} />
+          <input icon="user circle" 
+            placeholder="Your Email" type="text"
+            value={this.state.email} 
+            onChange={this.handleInputEmail} />
+          <input icon="user circle" 
+            placeholder="Enter Password" type="password"
+            value={this.state.password} 
+            onChange={this.handleInputPassword} />
           <button styleName="btn" type="button" onClick={this.handleClick}>
             Login
           </button>
