@@ -1,31 +1,26 @@
 import { call, put, takeLatest } from 'redux-saga/effects'
-import { normalize } from 'normalizr'
 
 import * as api from './api'
-import { user as userSchema } from '../schema/user'
 import TYPES from '../types'
 import LocalStorage from '../../../utilities/local-storage/token'
 
 export const name = 'userAuthActions'
 
 export function fetch(email, password) {
-  console.log("HERE I AM")
   return {
     type: TYPES.FETCH_USER_TOKEN_REQUEST,
     email,
-    password
+    password,
   }
 }
-
 
 export function* executeFetchToken({ email, password }) {
   const url = api.fetch.formatUrl()
   const body = api.fetch.serialize(email, password)
   try {
     const res = yield call(api.fetch.request, url, body)
-    const normalizedData = normalize(res.data.user, userSchema)
     LocalStorage.set(res.data.token)
-    yield put(fetchSuccess(normalizedData))
+    yield put(fetchSuccess(res.data))
   } catch (res) {
     // eslint-disable-next-line noconsole
     console.error('Request failed with', res.error)
@@ -35,8 +30,8 @@ export function* executeFetchToken({ email, password }) {
 export function fetchSuccess(data) {
   return {
     type: TYPES.FETCH_USER_TOKEN_SUCCESS,
-    users: data.entities.users,
-    id: data.result
+    user: data.user,
+    admin: data.admin
   }
 }
 
@@ -50,8 +45,8 @@ export function* executeFetchUserByJWT() {
   const url = api.fetchByJWT.formatUrl()
   try {
     const res = yield call(api.fetchByJWT.request, url)
-    const normalizedData = normalize(res.data.user, userSchema)
-    yield put(fetchSuccess(normalizedData))
+    console.log('Res', res)
+    yield put(fetchSuccess(res.data))
   } catch (res) {
     // eslint-disable-next-line noconsole
     console.error('Request failed with', res.error)

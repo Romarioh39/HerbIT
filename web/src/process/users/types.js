@@ -1,6 +1,6 @@
 import typesCreator from '../../state/types-creator'
 
-export default typesCreator('users',
+let TYPES = typesCreator('users',
   'FETCH_USER_INFO_REQUEST',
   'FETCH_USER_TOKEN_REQUEST',
   'FETCH_USER_TOKEN_SUCCESS',
@@ -8,3 +8,5 @@ export default typesCreator('users',
   'RECOVER_USER_PASSWORD_REQUEST',
   'RECOVER_USER_PASSWORD_SUCCESS'
 )
+
+export default TYPES
