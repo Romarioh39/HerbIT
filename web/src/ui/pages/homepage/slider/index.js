@@ -1,13 +1,11 @@
 import CSSModules from 'react-css-modules'
 import React, { Component } from 'react'
 import css from './index.css'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import connected from '../../../../state/connect'
+import { selector as sliderpage } from './reducer'
+import * as sliderpageActions from './actions'
 
-// export const Food = () => (
-//   <div>
-//     Favorite Food: <FontAwesomeIcon icon="stroopwafel" />
-//   </div>
-// )
+// import { Arrows } from './icon'
 
 class Slider extends Component {
   constructor(props) {
@@ -18,12 +16,23 @@ class Slider extends Component {
       p3: 3
     }
   }
+  componentDidMount() {
+    this.props.sliderpageActions.fetchSliderImage()
+  }
   render() {
+      // const { slidingImages } = this.props.sliderpage
+
     return (
       <div styleName="main-container">
-        <div styleName="Welcome">
+        <header styleName="secheader">
+          <ol>
+            <li>about me</li>
+            <li>contact me</li>
+          </ol>
+        </header>
+        <span href="#" styleName="Welcome">
           <a href="#">Welcome To My Portfolio</a>
-        </div>
+        </span>
         <div styleName="main-pics-cont">
               <i  className="fas fa-angle-left myarr1" onClick={() => {
                 console.log('Left')
@@ -58,10 +67,14 @@ class Slider extends Component {
                   this.setState({ p1: this.state.p1 + 1, p2: this.state.p2 + 1, p3: this.state.p3 + 1 })
                 }
               }} ></i>
-          </div>   
+          </div> 
+          {/* {slidingImages} */}
+          <footer>
+
+          </footer>
       </div>
     )
   }
 }
 
-export default CSSModules(Slider, css)
+export default connected([sliderpage], [sliderpageActions])(CSSModules(Slider, css));

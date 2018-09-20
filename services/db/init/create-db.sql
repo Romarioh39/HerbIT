@@ -1,6 +1,7 @@
 drop table if exists plans;
 drop table if exists passhash;
 drop table if exists users;
+drop table if exists images;
 
 drop database if exists project;
 drop database if exists project_integration;

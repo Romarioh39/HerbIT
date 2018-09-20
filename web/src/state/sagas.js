@@ -4,7 +4,7 @@ import RootSagas from './actions'
 import CreateAccountSagas from '../ui/pages/createaccount/actions'
 import InfoForChatsSagas from '../ui/pages/chatroom/action'
 import AllUsersForChatSagas from '../ui/pages/myfriendspage/actions'
-
+import SliderImageSagas from '../ui/pages/homepage/slider/actions'
 // import EvaluationsFiltersSaga from 'Process/evaluations/filters/actions'
 import { all } from 'redux-saga/effects'
 
@@ -16,5 +16,6 @@ export default function* root() {
     .concat(AllUsersForChatSagas)
     .concat(CreateAccountSagas)
     .concat(RootSagas)
+    .concat(SliderImageSagas)
   yield all(sagas)
 }
