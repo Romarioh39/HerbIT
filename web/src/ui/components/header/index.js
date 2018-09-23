@@ -7,13 +7,13 @@ import connected from '../../../state/connect'
 import { selector as users } from '../../../process/users/reducer'
 // import Logo from './logo.svg'
 import css from './index.css'
-import UserLinks from './user-dropdown'
-import DefaultLinks from './nav-links'
+// import UserLinks from './user-dropdown'
+// import DefaultLinks from './nav-links'
 
 class Header extends Component {
   render() {
-    const { active } = this.props.users
-    const rightSide = active ? <UserLinks /> : <DefaultLinks />
+    // const { active } = this.props.users
+    // const rightSide = active ? <UserLinks /> : <DefaultLinks />
 
     return (
       <div styleName="container">
@@ -21,7 +21,7 @@ class Header extends Component {
           <div styleName="logo">{/* <Logo /> */}</div>
         </Link>
         <div styleName="active-links">
-          {rightSide}
+          {/* {rightSide} */}
         </div>
       </div>
     )
