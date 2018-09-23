@@ -3,14 +3,21 @@ import jwt from 'jsonwebtoken'
 
 import { login } from '../repositories/auth'
 import { fetchUserByEmail } from '../repositories/user'
+import { verifyAdmin } from '../repositories/admins'
 
 export async function authinticateLogin(email, password) {
   if (!email || !password) {
     throw new Error({ status: 400, msg: 'Must provide username or password' })
   }
-  const user = await fetchUserByEmail(email)
+  let user = await fetchUserByEmail(email)
+
+  const adminObj = await verifyAdmin(user.userHandle)
+  let admin = (adminObj && !!adminObj.userHandle)
+
   const userCreds = await login(user.userHandle)
+
   const credsMatch = await bcrypt.compare(password, userCreds.passhash)
+
   if (credsMatch) {
     const token = jwt.sign({
       'iss': 'projectstarterllc',
@@ -24,11 +31,13 @@ export async function authinticateLogin(email, password) {
       userHandle: user.userHandle,
       username: user.username,
       email: user.email,
-      joinedDate: user.joinedDate
+      joinedDate: user.joinedDate,
+      admin
     }, process.env.JWT_SECRET)
     return {
       token,
-      user
+      user,
+      admin
     }
   } else {
     throw new Error('Email or Password not found')

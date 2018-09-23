@@ -2,17 +2,17 @@ import TYPES from './types'
 
 export const initialState = {
   active: null,
-  entities: {},
-  recover: false
+  recover: false,
+  admin: false
 }
 
-const loginUser = (state, { users, id }) => ({
+const loginUser = (state, { admin, user }) => ({
   ...state,
-  active: id,
-  entities: Object.assign({}, users)
+  active: user,
+  admin
 })
 
-const recoverPassword = (state, { users, id }) => ({
+const recoverPassword = (state, action) => ({
   ...state,
   recover: true
 })
@@ -29,8 +29,8 @@ export default function(state = initialState, action = {}) {
 }
 
 export const selector = {
-  name: 'users',
+  name: 'user',
   select(state) {
-    return state.users
+    return state.user
   }
 }

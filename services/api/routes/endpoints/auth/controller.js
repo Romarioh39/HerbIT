@@ -1,21 +1,15 @@
 import { authinticateLogin } from '../../commands/auth'
-
-// function wrapAsyncFunc (asyncRoute) {
-//   return function routeWrapper(req, res, next) {
-//     return asyncRoute(req, res, next).catch(next)
-//   }
-// }
+import { wrapAsyncFunc } from '../../../common/utils/wrap-async-route'
 
 export default class AuthController {
   constructor(router) {
-    router.post('/login', this.login)
-    router.get('/jwt/login', this.loginByJwt)
-    router.post('/recover', this.recover)
+    router.post('/login', wrapAsyncFunc(this.login))
+    router.get('/jwt/login', wrapAsyncFunc(this.loginByJwt))
+    router.post('/recover', wrapAsyncFunc(this.recover))
   }
 
   async login(req, res) {
     const { email, password } = req.body
-    console.log('here i error', email, password)
     const results = await authinticateLogin(email, password)
     res.send(results)
   }
@@ -23,6 +17,7 @@ export default class AuthController {
   async loginByJwt(req, res) {
     const token = req.user
     res.send({
+      admin: token.admin,
       user: {
         firstName: token.firstName,
         lastName: token.lastName,

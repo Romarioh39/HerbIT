@@ -1,13 +1,13 @@
 import sql from 'sql-template-strings'
 import PGWrapper from '../../common/utils/pg-wrapper'
 
-export async function login(userHandle) {
-  const query = sql`select * from passhash where user_handle = ${userHandle};`
+export async function verifyAdmin(userHandle) {
+  const query = sql`select * from admins where user_handle = ${userHandle};`
 
-  const userAuths = await PGWrapper.sqlAndMap(query, (row) => ({
+  const admins = await PGWrapper.sqlAndMap(query, (row) => ({
     userHandle: row.user_handle,
-    passhash: row.passhash
+    id: row.id
   }))
 
-  return userAuths[0]
+  return admins[0]
 }
